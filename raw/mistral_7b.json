@@ -1,0 +1,114 @@
+{
+ "parse_duration": {
+  "answer": " Here's a Python function named `parse_duration` that converts duration strings in the format you provided and returns the total number of seconds as an integer:\n\n```python\nfrom re import match, findall\n\ndef parse_duration(s):\n    units_and_values = {'h': 3600, 'm': 60, 's': 1}\n    pattern = r'(\\d+)' + '|'.join(f'({k})(\\d+)' for k in units_and_values.keys())\n\n    match_result = match(pattern, s)\n    if match_result:\n        values = findall(pattern, s)\n        return sum(int(v) * units_and_values[k] for k, v in zip(units_and_values.keys(), values))\n    else:\n        raise ValueError(f\"Invalid duration format: {s}\")\n```\n\nThis function checks if the input string matches the pattern defined by the regular expression. If it matches, it finds all occurrences of the units (h, m, or s) and the corresponding values, then calculates the total number of seconds by summing the products of the values and their respective unit durations. If the input string doesn't match the pattern, it raises a `ValueError` with an appropriate error message.",
+  "thinking": "",
+  "wall_s": 27.51,
+  "timed_out": false,
+  "eval_count": 300,
+  "eval_s": 26.307217
+ },
+ "merge_intervals": {
+  "answer": " Here's a Python function that merges and sorts the intervals:\n\n```python\ndef merge_intervals(intervals):\n    if not intervals:\n        return []\n\n    # Sort the intervals based on their start times\n    intervals.sort(key=lambda x: x[0])\n\n    merged_intervals = [intervals[0]]\n\n    for current_interval in intervals:\n        last_merged_interval = merged_intervals[-1]\n\n        # If the current interval overlaps with the last merged interval, merge them\n        if last_merged_interval[1] >= current_interval[0]:\n            last_merged_interval[1] = max(last_merged_interval[1], current_interval[1])\n        else:\n            merged_intervals.append(current_interval)\n\n    return merged_intervals\n```\n\nThis function first sorts the given intervals based on their start times. Then, it iterates through the sorted intervals and merges the ones that overlap. If the current interval doesn't overlap with the last merged interval, it appends the current interval to the merged intervals list. Finally, it returns the merged and sorted intervals.",
+  "thinking": "",
+  "wall_s": 26.53,
+  "timed_out": false,
+  "eval_count": 269,
+  "eval_s": 25.581959
+ },
+ "is_valid_ipv4": {
+  "answer": " ```python\n\ndef is_valid_ipv4(s):\n    if not isinstance(s, str):\n        return False\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not (0 <= int(part) <= 255):\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True\n\n```\n\nThis function checks if the given string `s` is a valid IPv4 address by splitting it into parts using dots, checking the number of parts, and making sure each part is a decimal number between 0 and 255 (excluding leading zeros). It also ensures that there are no extra characters in the input string.",
+  "thinking": "",
+  "wall_s": 19.41,
+  "timed_out": false,
+  "eval_count": 185,
+  "eval_s": 18.207643
+ },
+ "roman_to_int": {
+  "answer": " ```python\n\ndef roman_to_int(s):\n    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s) - 1):\n        if roman_dict[s[i]] < roman_dict[s[i+1]]:\n            total -= roman_dict[s[i]]\n        else:\n            total += roman_dict[s[i]]\n    total += roman_dict[s[-1]]\n    return total\n\n```\n\nThis function takes a string `s` as input, which represents a Roman numeral, and returns the corresponding integer value.\nThe function first initializes a dictionary `roman_dict` to map Roman numerals to their corresponding integer values.\nThen, it iterates through the input string `s`, comparing each Roman numeral with the next one. If the current Roman numeral is smaller than the next one, it subtracts the current numeral's value from the total. If the current Roman numeral is larger or equal, it adds the current numeral's value to the total. Finally, it adds the value of the last Roman numeral in the input string to the total.",
+  "thinking": "",
+  "wall_s": 29.06,
+  "timed_out": false,
+  "eval_count": 310,
+  "eval_s": 28.482636
+ },
+ "sql_region_totals": {
+  "answer": " Here is the SQL query you requested:\n\n```sql\nSELECT regions.region, SUM(orders.amount) as total_amount\nFROM customers\nJOIN orders ON customers.id = orders.customer_id\nJOIN (\n    SELECT DISTINCT region AS region\n    FROM customers\n) AS regions ON customers.region = regions.region\nGROUP BY regions.region\nORDER BY total_amount DESC;\n```\n\nThis query joins the `customers` and `orders` tables, then joins the resulting dataset with a subquery that selects distinct regions from the `customers` table. It groups the results by region and calculates the total order amount for each region. Finally, it orders the results in descending order by total amount, so the region with the highest total amount is listed first.",
+  "thinking": "",
+  "wall_s": 19.72,
+  "timed_out": false,
+  "eval_count": 180,
+  "eval_s": 17.358188
+ },
+ "sql_top2": {
+  "answer": " Here is the SQL query you requested:\n\n```sql\nSELECT customers.name\nFROM customers\nJOIN (\n    SELECT customer_id, SUM(amount) as total_amount\n    FROM orders\n    GROUP BY customer_id\n    ORDER BY total_amount DESC\n    LIMIT 2\n) as total_orders\nON customers.id = total_orders.customer_id\nORDER BY total_orders.total_amount DESC\nLIMIT 1 OFFSET 0;\n\n-- To get the second customer with the largest total order amount:\nLIMIT 1 OFFSET 1;\n```\n\nThis query first calculates the total amount of orders for each customer, then joins the customers table with the ordered total_orders subquery to find the customers with the largest total amounts. The `LIMIT 1 OFFSET 0` at the end will return the first customer (with the largest total amount) and you can change `OFFSET 0` to `OFFSET 1` to get the second customer.",
+  "thinking": "",
+  "wall_s": 21.82,
+  "timed_out": false,
+  "eval_count": 224,
+  "eval_s": 21.170999
+ },
+ "sql_busiest_month": {
+  "answer": " Here is the SQL query you requested:\n\n```sql\nWITH month_orders_count AS (\n    SELECT\n        EXTRACT(YEAR FROM order_date) AS year,\n        EXTRACT(MONTH FROM order_date) AS month,\n        COUNT(*) AS order_count\n    FROM\n        orders\n    GROUP BY\n        year, month\n),\nmonth_max_orders AS (\n    SELECT\n        year, month, MAX(order_count) AS max_orders\n    FROM\n        month_orders_count\n    GROUP BY\n        year\n)\nSELECT\n    EXTRACT(YEAR FROM month_max_orders.year) AS year,\n    EXTRACT(MONTH FROM month_max_orders.year) AS month,\n    month_max_orders.max_orders\nFROM\n    month_max_orders\nLEFT JOIN\n    month_orders_count\nON\n    month_orders_count.year = month_max_orders.year\nAND month_orders_count.month = EXTRACT(MONTH FROM month_max_orders.year)\nAND month_orders_count.max_orders = month_max_orders.max_orders\n```\n\nThis query first creates a Common Table Expression (CTE) named `month_orders_count` to count the number of orders per month. Then, it creates another CTE named `month_max_orders` to find the month with the most orders. Finally, it joins the two CTEs to return the year and month with the most orders, along with the number of orders in that month.",
+  "thinking": "",
+  "wall_s": 40.21,
+  "timed_out": false,
+  "eval_count": 364,
+  "eval_s": 38.888934
+ },
+ "sql_avg_frequent": {
+  "answer": " Here is the SQL query you requested:\n\n```sql\nSELECT customers.name, ROUND(AVG(orders.amount), 2) as average_order_amount\nFROM customers\nJOIN orders ON customers.id = orders.customer_id\nGROUP BY customers.id, customers.name\nHAVING COUNT(orders.id) > 2\nORDER BY customers.name;\n```\n\nThis query will return the name of each customer who has more than 2 orders, along with their average order amount rounded to 2 decimal places. The results are ordered by the customer's name.",
+  "thinking": "",
+  "wall_s": 14.83,
+  "timed_out": false,
+  "eval_count": 133,
+  "eval_s": 13.428225
+ },
+ "multiply": {
+  "answer": " Answer: 17,168",
+  "thinking": "",
+  "wall_s": 1.94,
+  "timed_out": false,
+  "eval_count": 10,
+  "eval_s": 0.859222
+ },
+ "train": {
+  "answer": " The train journey lasts for 3 hours and 35 minutes.\n\nAnswer: 3.6 hours (or 219 minutes if you prefer)",
+  "thinking": "",
+  "wall_s": 4.41,
+  "timed_out": false,
+  "eval_count": 37,
+  "eval_s": 3.271203
+ },
+ "sisters": {
+  "answer": " Answer: Sally has 2 sisters.\n\nHere's the explanation:\n\n1. We know that Sally has 3 brothers.\n2. Each of her brothers has 2 sisters. So, if Sally is one of her brothers' sisters, her other brother must have the remaining sister(s) mentioned.\n3. Since each brother has exactly 2 sisters, it implies that Sally's other brother has 1 sister along with Sally.\n4. Therefore, Sally has 2 sisters in total.",
+  "thinking": "",
+  "wall_s": 10.88,
+  "timed_out": false,
+  "eval_count": 108,
+  "eval_s": 9.837896
+ },
+ "strawberry": {
+  "answer": " The letter 'r' appears 3 times in the word \"strawberry\".\n\nAnswer: 3",
+  "thinking": "",
+  "wall_s": 3.23,
+  "timed_out": false,
+  "eval_count": 25,
+  "eval_s": 2.170649
+ },
+ "json": {
+  "answer": " {\n \"name\": \"Ada\",\n \"age\": 36,\n \"languages\": [\"Python\", \"C\"]\n}",
+  "thinking": "",
+  "wall_s": 3.99,
+  "timed_out": false,
+  "eval_count": 32,
+  "eval_s": 2.93732
+ },
+ "three_words": {
+  "answer": " okay, let's chat",
+  "thinking": "",
+  "wall_s": 1.22,
+  "timed_out": false,
+  "eval_count": 7,
+  "eval_s": 0.642205
+ }
+}

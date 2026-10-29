@@ -1,0 +1,114 @@
+{
+ "parse_duration": {
+  "answer": "```python\ndef parse_duration(s):\n    \"\"\"\n    Converts a duration string (e.g., '1h30m', '45s', '2h5s') into a total number of seconds (int).\n\n    Args:\n        s: The duration string.\n\n    Returns:\n        The total number of seconds as an integer.\n    \"\"\"\n    total_seconds = 0\n    parts = s.split()\n    for part in parts:\n        if part.endswith('s'):\n            value = int(part[:-1])\n            if part == 's':\n                total_seconds += value\n            else:\n                total_seconds += value * 60\n        elif part.endswith('m'):\n            value = int(part[:-1])\n            total_seconds += value * 60 * 60\n        elif part.endswith('h'):\n            value = int(part[:-1])\n            total_seconds += value * 60 * 60 * 60\n        else:\n            try:\n                total_seconds += int(part)\n            except ValueError:\n                pass  # Ignore invalid parts\n\n    return total_seconds\n```",
+  "thinking": "",
+  "wall_s": 13.66,
+  "timed_out": false,
+  "eval_count": 266,
+  "eval_s": 12.954862
+ },
+ "merge_intervals": {
+  "answer": "```python\ndef merge_intervals(intervals):\n    \"\"\"\n    Merges overlapping intervals.\n\n    Args:\n        intervals: A list of [start, end] pairs.\n\n    Returns:\n        A merged, sorted list of overlapping intervals.\n    \"\"\"\n    if not intervals:\n        return []\n\n    # Sort intervals based on start time\n    intervals.sort(key=lambda x: x[0])\n\n    merged_intervals = []\n    current_interval = intervals[0]\n\n    for interval in intervals[1:]:\n        if interval[0] <= current_interval[1]:\n            # Overlapping intervals, merge them\n            current_interval = [current_interval[0], max(current_interval[1], interval[1])]\n        else:\n            # Non-overlapping interval, add the current interval to the result\n            merged_intervals.append(current_interval)\n            current_interval = interval\n\n    # Add the last interval to the result\n    merged_intervals.append(current_interval)\n\n    return merged_intervals\n```",
+  "thinking": "",
+  "wall_s": 11.96,
+  "timed_out": false,
+  "eval_count": 233,
+  "eval_s": 11.469135
+ },
+ "is_valid_ipv4": {
+  "answer": "```python\ndef is_valid_ipv4(s):\n    \"\"\"\n    Checks if a given string is a valid IPv4 address.\n\n    Args:\n        s: The string to check.\n\n    Returns:\n        True if the string is a valid IPv4 address, False otherwise.\n    \"\"\"\n    try:\n        parts = s.split('.')\n        if len(parts) != 4:\n            return False\n        for part in parts:\n            if not part.isdigit():\n                return False\n            num = int(part)\n            if num < 0 or num > 255:\n                return False\n            if len(part) > 1 and part[0] == '0':\n                return False\n        return True\n    except:\n        return False\n```",
+  "thinking": "",
+  "wall_s": 9.29,
+  "timed_out": false,
+  "eval_count": 177,
+  "eval_s": 8.798642
+ },
+ "roman_to_int": {
+  "answer": "```python\ndef roman_to_int(s):\n    \"\"\"Converts a Roman numeral string to an integer.\n\n    Args:\n        s: The Roman numeral string.\n\n    Returns:\n        The integer representation of the Roman numeral.\n    \"\"\"\n    roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    result = 0\n    prev_value = 0\n    for i in range(len(s) - 1, -1, -1):\n        curr_value = roman_map[s[i]]\n        if curr_value < prev_value:\n            result -= curr_value\n        else:\n            result += curr_value\n        prev_value = curr_value\n    return result\n```",
+  "thinking": "",
+  "wall_s": 10.58,
+  "timed_out": false,
+  "eval_count": 206,
+  "eval_s": 10.146157
+ },
+ "sql_region_totals": {
+  "answer": "```sql\nSELECT c.region, SUM(o.amount) AS total\nFROM customers c\nJOIN orders o ON c.id = o.customer_id\nGROUP BY c.region\nORDER BY total DESC;\n```",
+  "thinking": "",
+  "wall_s": 3.02,
+  "timed_out": false,
+  "eval_count": 49,
+  "eval_s": 2.356247
+ },
+ "sql_top2": {
+  "answer": "```sql\nSELECT c.name\nFROM customers c\nJOIN (\n    SELECT customer_id, SUM(amount) AS total_amount\n    FROM orders\n    GROUP BY customer_id\n    ORDER BY total_amount DESC\n    LIMIT 2\n) AS top_customers ON c.id = top_customers.customer_id\nORDER BY top_customers.total_amount DESC;\n```",
+  "thinking": "",
+  "wall_s": 4.98,
+  "timed_out": false,
+  "eval_count": 86,
+  "eval_s": 4.287205
+ },
+ "sql_busiest_month": {
+  "answer": "```sql\nSELECT\n  strftime('%Y-%m', order_date) AS month,\n  COUNT(*) AS order_count\nFROM orders\nGROUP BY\n  month\nORDER BY\n  order_count DESC\nLIMIT 1;\n```",
+  "thinking": "",
+  "wall_s": 3.52,
+  "timed_out": false,
+  "eval_count": 53,
+  "eval_s": 2.652784
+ },
+ "sql_avg_frequent": {
+  "answer": "```sql\nSELECT c.name, ROUND(AVG(o.amount), 2) AS average_order_amount\nFROM customers c\nJOIN orders o ON c.id = o.customer_id\nGROUP BY c.id\nHAVING COUNT(o.id) > 2\nORDER BY c.name;\n```",
+  "thinking": "",
+  "wall_s": 4.35,
+  "timed_out": false,
+  "eval_count": 71,
+  "eval_s": 3.485368
+ },
+ "multiply": {
+  "answer": "Okay, let's calculate 487 multiplied by 36. We can use the standard multiplication method:\n\n1. Multiply 487 by 6:\n   487 * 6 = (400 * 6) + (80 * 6) + (7 * 6) = 2400 + 480 + 42 = 2922\n\n2. Multiply 487 by 30 (which is 3 * 10):\n   487 * 30 = 3 * (487 * 10) = 3 * 4870 = 14610\n\n3. Add the results from steps 1 and 2:\n   2922 + 14610 = 17532\n\nAnswer: 17532",
+  "thinking": "",
+  "wall_s": 10.67,
+  "timed_out": false,
+  "eval_count": 193,
+  "eval_s": 10.173162
+ },
+ "train": {
+  "answer": "Let's calculate the duration of the trip.\nThe train leaves at 14:35 and arrives at 18:10.\nFrom 14:35 to 18:35 is 4 hours.\nFrom 18:35 to 18:10 is -25 minutes.\nSo the time from 14:35 to 18:10 is 18:10 - 14:35.\nFirst, we calculate the difference in hours: 18 - 14 = 4 hours.\nNow, we calculate the difference in minutes:\n10 minutes - 35 minutes = -25 minutes.\nSo the trip is 4 hours and -25 minutes, which is equivalent to 4 hours and -25 minutes, or 4 hours - 25 minutes.\nTo calculate the total time in minutes:\n4 hours * 60 minutes/hour = 240 minutes.\n240 minutes - 25 minutes = 215 minutes.\n\nAlternatively, we can convert the departure and arrival times to minutes from midnight.\n14:35 is 14 * 60 + 35 = 840 + 35 = 875 minutes from midnight.\n18:10 is 18 * 60 + 10 = 1080 + 10 = 1090 minutes from midnight.\nThe duration of the trip is 1090 - 875 = 215 minutes.\n\nAnswer: 215",
+  "thinking": "",
+  "wall_s": 22.95,
+  "timed_out": false,
+  "eval_count": 354,
+  "eval_s": 22.365838
+ },
+ "sisters": {
+  "answer": "This is a classic trick question! Here's how to solve it:\n\nSince each of Sally's brothers shares the same sisters, and we know Sally is one of them, there must be one other sister.\n\nAnswer: 1",
+  "thinking": "",
+  "wall_s": 3.5,
+  "timed_out": false,
+  "eval_count": 50,
+  "eval_s": 2.866873
+ },
+ "strawberry": {
+  "answer": "Let's count the 'r's in \"strawberry\":\n\nstrawberry\n\nThere are three 'r's in the word.\n\nAnswer: 3",
+  "thinking": "",
+  "wall_s": 3.45,
+  "timed_out": false,
+  "eval_count": 33,
+  "eval_s": 2.786548
+ },
+ "json": {
+  "answer": "```json\n{\n  \"name\": \"Ada\",\n  \"age\": 36,\n  \"languages\": [\"Python\", \"C\"]\n}\n```\n",
+  "thinking": "",
+  "wall_s": 2.78,
+  "timed_out": false,
+  "eval_count": 38,
+  "eval_s": 2.192335
+ },
+ "three_words": {
+  "answer": "okay, i understand.\n",
+  "thinking": "",
+  "wall_s": 0.69,
+  "timed_out": false,
+  "eval_count": 7,
+  "eval_s": 0.328904
+ }
+}

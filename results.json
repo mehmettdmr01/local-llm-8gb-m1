@@ -1,0 +1,1199 @@
+{
+ "gemma3:1b": {
+  "model": "gemma3:1b",
+  "key": "gemma3:1b",
+  "started": "2026-10-29 14:15:02",
+  "free_pct_before": 60,
+  "swap_mb_before": 1274.75,
+  "pull_s": 97.8,
+  "size_gb": 0.81,
+  "details": {
+   "parent_model": "dhiltgen/gemma3:1b-it-q4_K_M-llamacpp",
+   "format": "gguf",
+   "family": "gemma3",
+   "families": [
+    "gemma3"
+   ],
+   "parameter_size": "999.89M",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 1152,
+   "runner": "llamacpp"
+  },
+  "load_s": 0.78,
+  "vram_gb": 0.88,
+  "loaded_gb": 0.88,
+  "gpu_share": 1.0,
+  "gen_tps": 54.14,
+  "prompt_tps": 622.4,
+  "speed_runs": [
+   {
+    "gen_tps": 53.93584163088501,
+    "prompt_tps": 628.3933239493264,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 54.14446250199869,
+    "prompt_tps": 360.5006633212205,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 54.649299859214004,
+    "prompt_tps": 622.4169695762586,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 2186,
+  "long_prompt_tps": 797.8,
+  "long_gen_tps": 54.13,
+  "swap_mb_during": 1274.75,
+  "free_pct_during": 41,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 2.42,
+    "tokens": 127,
+    "timed_out": false,
+    "error": "AssertionError"
+   },
+   "merge_intervals": {
+    "ok": true,
+    "wall_s": 4.86,
+    "tokens": 259,
+    "timed_out": false,
+    "error": ""
+   },
+   "is_valid_ipv4": {
+    "ok": false,
+    "wall_s": 2.89,
+    "tokens": 153,
+    "timed_out": false,
+    "error": "AssertionError"
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 3.09,
+    "tokens": 163,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": false,
+    "wall_s": 0.95,
+    "tokens": 45,
+    "timed_out": false,
+    "error": "got [('region', 4658.62)]"
+   },
+   "sql_top2": {
+    "ok": false,
+    "wall_s": 1.02,
+    "tokens": 49,
+    "timed_out": false,
+    "error": "got [('Grace',)]"
+   },
+   "sql_busiest_month": {
+    "ok": true,
+    "wall_s": 1.11,
+    "tokens": 54,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_avg_frequent": {
+    "ok": false,
+    "wall_s": 1.48,
+    "tokens": 74,
+    "timed_out": false,
+    "error": "no such column: c.amount"
+   },
+   "multiply": {
+    "ok": false,
+    "wall_s": 0.56,
+    "tokens": 26,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 3.89,
+    "tokens": 207,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": true,
+    "wall_s": 0.82,
+    "tokens": 40,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": false,
+    "wall_s": 1.9,
+    "tokens": 99,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 0.93,
+    "tokens": 46,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 0.18,
+    "tokens": 7,
+    "timed_out": false
+   }
+  },
+  "score": 7,
+  "exam_wall_s": 26.1,
+  "swap_mb_after": 1274.75
+ },
+ "llama3.2:1b": {
+  "model": "llama3.2:1b",
+  "key": "llama3.2:1b",
+  "started": "2026-10-29 14:18:28",
+  "free_pct_before": 56,
+  "swap_mb_before": 1274.75,
+  "pull_s": 165.7,
+  "size_gb": 1.32,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "llama",
+   "families": [
+    "llama"
+   ],
+   "parameter_size": "1.2B",
+   "quantization_level": "Q8_0",
+   "context_length": 131072,
+   "embedding_length": 2048,
+   "runner": "ggml"
+  },
+  "load_s": 0.79,
+  "vram_gb": 1.52,
+  "loaded_gb": 1.52,
+  "gpu_share": 1.0,
+  "gen_tps": 44.48,
+  "prompt_tps": 1736.8,
+  "speed_runs": [
+   {
+    "gen_tps": 44.27464809437418,
+    "prompt_tps": 1736.8290463981475,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 44.47526054945362,
+    "prompt_tps": 903.0121906645741,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 44.55937048749344,
+    "prompt_tps": 1804.2787181029298,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 1883,
+  "long_prompt_tps": 790.5,
+  "long_gen_tps": 42.07,
+  "swap_mb_during": 1266.75,
+  "free_pct_during": 31,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 2.63,
+    "tokens": 114,
+    "timed_out": false,
+    "error": "ValueError: too many values to unpack (expected 2, got 4)"
+   },
+   "merge_intervals": {
+    "ok": false,
+    "wall_s": 2.27,
+    "tokens": 97,
+    "timed_out": false,
+    "error": "AssertionError"
+   },
+   "is_valid_ipv4": {
+    "ok": true,
+    "wall_s": 2.29,
+    "tokens": 84,
+    "timed_out": false,
+    "error": ""
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 3.2,
+    "tokens": 134,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": false,
+    "wall_s": 0.94,
+    "tokens": 36,
+    "timed_out": false,
+    "error": "no such column: region"
+   },
+   "sql_top2": {
+    "ok": false,
+    "wall_s": 1.23,
+    "tokens": 48,
+    "timed_out": false,
+    "error": "no such column: T2.name"
+   },
+   "sql_busiest_month": {
+    "ok": false,
+    "wall_s": 1.42,
+    "tokens": 58,
+    "timed_out": false,
+    "error": "got [('South', 11)]"
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 1.49,
+    "tokens": 64,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": false,
+    "wall_s": 1.76,
+    "tokens": 76,
+    "timed_out": false
+   },
+   "train": {
+    "ok": false,
+    "wall_s": 3.46,
+    "tokens": 150,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": false,
+    "wall_s": 3.11,
+    "tokens": 136,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": false,
+    "wall_s": 0.98,
+    "tokens": 41,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 0.98,
+    "tokens": 41,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": false,
+    "wall_s": 0.08,
+    "tokens": 2,
+    "timed_out": false
+   }
+  },
+  "score": 4,
+  "exam_wall_s": 25.8,
+  "swap_mb_after": 1288.19
+ },
+ "qwen3:1.7b": {
+  "model": "qwen3:1.7b",
+  "key": "qwen3:1.7b",
+  "started": "2026-10-29 14:23:06",
+  "free_pct_before": 54,
+  "swap_mb_before": 1288.19,
+  "pull_s": 0.8,
+  "size_gb": 1.36,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "2.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 40960,
+   "embedding_length": 2048,
+   "runner": "ggml"
+  },
+  "load_s": 1.54,
+  "vram_gb": 1.45,
+  "loaded_gb": 1.45,
+  "gpu_share": 1.0,
+  "gen_tps": 45.41,
+  "prompt_tps": 1137.5,
+  "speed_runs": [
+   {
+    "gen_tps": 44.867484061089186,
+    "prompt_tps": 346.9901814630134,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 45.405318736469304,
+    "prompt_tps": 1161.2903225806451,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 45.55541121766411,
+    "prompt_tps": 1137.4647175295952,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 1936,
+  "long_prompt_tps": 482.4,
+  "long_gen_tps": 39.06,
+  "swap_mb_during": 1288.19,
+  "free_pct_during": 27,
+  "exam": {
+   "parse_duration": {
+    "ok": true,
+    "wall_s": 61.55,
+    "tokens": 2459,
+    "timed_out": false,
+    "error": ""
+   },
+   "merge_intervals": {
+    "ok": false,
+    "wall_s": 49.9,
+    "tokens": 2000,
+    "timed_out": false,
+    "error": "SyntaxError: invalid syntax"
+   },
+   "is_valid_ipv4": {
+    "ok": true,
+    "wall_s": 65.74,
+    "tokens": 2571,
+    "timed_out": false,
+    "error": ""
+   },
+   "roman_to_int": {
+    "ok": false,
+    "wall_s": 114.36,
+    "tokens": 4096,
+    "timed_out": false,
+    "error": "NameError: name 'roman_to_int' is not defined"
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 12.82,
+    "tokens": 507,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": true,
+    "wall_s": 17.83,
+    "tokens": 692,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_busiest_month": {
+    "ok": true,
+    "wall_s": 28.58,
+    "tokens": 1133,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 14.89,
+    "tokens": 599,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": true,
+    "wall_s": 39.74,
+    "tokens": 1497,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 55.0,
+    "tokens": 1920,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": false,
+    "wall_s": 31.88,
+    "tokens": 1100,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": true,
+    "wall_s": 14.45,
+    "tokens": 484,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 7.9,
+    "tokens": 272,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 13.47,
+    "tokens": 487,
+    "timed_out": false
+   }
+  },
+  "score": 11,
+  "exam_wall_s": 528.1,
+  "swap_mb_after": 3321.12
+ },
+ "llama3.2:3b": {
+  "model": "llama3.2:3b",
+  "key": "llama3.2:3b",
+  "started": "2026-10-29 14:33:25",
+  "free_pct_before": 77,
+  "swap_mb_before": 3305.12,
+  "pull_s": 235.5,
+  "size_gb": 2.02,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "llama",
+   "families": [
+    "llama"
+   ],
+   "parameter_size": "3.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 3072,
+   "runner": "ggml"
+  },
+  "load_s": 1.04,
+  "vram_gb": 2.56,
+  "loaded_gb": 2.56,
+  "gpu_share": 1.0,
+  "gen_tps": 27.83,
+  "prompt_tps": 1116.0,
+  "speed_runs": [
+   {
+    "gen_tps": 27.792123169478867,
+    "prompt_tps": 1126.4281499758622,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 27.83308153092386,
+    "prompt_tps": 310.5727849505302,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 27.859848853790318,
+    "prompt_tps": 1116.041771849175,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 1883,
+  "long_prompt_tps": 254.1,
+  "long_gen_tps": 25.52,
+  "swap_mb_during": 3209.06,
+  "free_pct_during": 45,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 3.92,
+    "tokens": 101,
+    "timed_out": false,
+    "error": "ValueError: not enough values to unpack (expected 3, got 2)"
+   },
+   "merge_intervals": {
+    "ok": true,
+    "wall_s": 4.81,
+    "tokens": 127,
+    "timed_out": false,
+    "error": ""
+   },
+   "is_valid_ipv4": {
+    "ok": true,
+    "wall_s": 3.05,
+    "tokens": 79,
+    "timed_out": false,
+    "error": ""
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 5.08,
+    "tokens": 138,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 2.27,
+    "tokens": 53,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": false,
+    "wall_s": 1.82,
+    "tokens": 44,
+    "timed_out": false,
+    "error": "got [('Ada',), ('Grace',)]"
+   },
+   "sql_busiest_month": {
+    "ok": false,
+    "wall_s": 2.48,
+    "tokens": 62,
+    "timed_out": false,
+    "error": "no such function: TO_CHAR"
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 2.81,
+    "tokens": 71,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": false,
+    "wall_s": 2.65,
+    "tokens": 67,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 5.94,
+    "tokens": 158,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": false,
+    "wall_s": 2.89,
+    "tokens": 71,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": false,
+    "wall_s": 2.58,
+    "tokens": 64,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 1.04,
+    "tokens": 22,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": false,
+    "wall_s": 0.35,
+    "tokens": 6,
+    "timed_out": false
+   }
+  },
+  "score": 7,
+  "exam_wall_s": 41.7,
+  "swap_mb_after": 3177.06
+ },
+ "phi4-mini": {
+  "model": "phi4-mini",
+  "error": "StopIteration()",
+  "started": "2026-10-29 14:44:41"
+ },
+ "qwen3:4b": {
+  "model": "qwen3:4b",
+  "key": "qwen3:4b",
+  "started": "2026-10-29 14:45:42",
+  "free_pct_before": 71,
+  "swap_mb_before": 2841.06,
+  "pull_s": 342.3,
+  "size_gb": 2.5,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "4.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2560,
+   "runner": "ggml"
+  },
+  "load_s": 3.04,
+  "vram_gb": 3.18,
+  "loaded_gb": 3.18,
+  "gpu_share": 1.0,
+  "gen_tps": 20.88,
+  "prompt_tps": 533.0,
+  "speed_runs": [
+   {
+    "gen_tps": 20.479844353182916,
+    "prompt_tps": 548.2901470229875,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 20.88222506633777,
+    "prompt_tps": 532.9964269498786,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 21.399717038897748,
+    "prompt_tps": 149.40569733725846,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 1936,
+  "long_prompt_tps": 184.0,
+  "long_gen_tps": 17.4,
+  "swap_mb_during": 3106.19,
+  "free_pct_during": 21,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 240.96,
+    "tokens": 4096,
+    "timed_out": false,
+    "error": "NameError: name 'parse_duration' is not defined"
+   },
+   "merge_intervals": {
+    "ok": false,
+    "wall_s": 256.97,
+    "tokens": 4096,
+    "timed_out": false,
+    "error": "NameError: name 'merge_intervals' is not defined"
+   },
+   "is_valid_ipv4": {
+    "ok": false,
+    "wall_s": 264.52,
+    "tokens": 4096,
+    "timed_out": false,
+    "error": "NameError: name 'is_valid_ipv4' is not defined"
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 182.05,
+    "tokens": 3034,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 54.8,
+    "tokens": 920,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": true,
+    "wall_s": 95.42,
+    "tokens": 1589,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_busiest_month": {
+    "ok": true,
+    "wall_s": 135.4,
+    "tokens": 2221,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 119.47,
+    "tokens": 1910,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": true,
+    "wall_s": 159.09,
+    "tokens": 2431,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 90.76,
+    "tokens": 1442,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": true,
+    "wall_s": 155.21,
+    "tokens": 2404,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": true,
+    "wall_s": 117.75,
+    "tokens": 1784,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 152.75,
+    "tokens": 2135,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 103.21,
+    "tokens": 1565,
+    "timed_out": false
+   }
+  },
+  "score": 11,
+  "exam_wall_s": 2128.4,
+  "swap_mb_after": 7188.38
+ },
+ "gemma3:4b": {
+  "model": "gemma3:4b",
+  "key": "gemma3:4b",
+  "started": "2026-10-29 15:29:00",
+  "free_pct_before": 70,
+  "swap_mb_before": 2965.88,
+  "pull_s": 389.7,
+  "size_gb": 3.35,
+  "details": {
+   "parent_model": "dhiltgen/gemma3:4b-it-q4_K_M-llamacpp",
+   "format": "gguf",
+   "family": "gemma3",
+   "families": [
+    "gemma3",
+    "clip"
+   ],
+   "parameter_size": "3.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 2560,
+   "runner": "llamacpp"
+  },
+  "load_s": 4.36,
+  "vram_gb": 2.26,
+  "loaded_gb": 2.43,
+  "gpu_share": 0.929,
+  "gen_tps": 20.9,
+  "prompt_tps": 211.5,
+  "speed_runs": [
+   {
+    "gen_tps": 20.870791376384666,
+    "prompt_tps": 211.49215852150712,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 20.895197606128626,
+    "prompt_tps": 66.58744468119981,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 21.159343577651565,
+    "prompt_tps": 216.95232055539793,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 2187,
+  "long_prompt_tps": 195.0,
+  "long_gen_tps": 19.44,
+  "swap_mb_during": 3126.19,
+  "free_pct_during": 14,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 13.66,
+    "tokens": 266,
+    "timed_out": false,
+    "error": "ValueError: invalid literal for int() with base 10: '1h30'"
+   },
+   "merge_intervals": {
+    "ok": true,
+    "wall_s": 11.96,
+    "tokens": 233,
+    "timed_out": false,
+    "error": ""
+   },
+   "is_valid_ipv4": {
+    "ok": true,
+    "wall_s": 9.29,
+    "tokens": 177,
+    "timed_out": false,
+    "error": ""
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 10.58,
+    "tokens": 206,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 3.02,
+    "tokens": 49,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": true,
+    "wall_s": 4.98,
+    "tokens": 86,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_busiest_month": {
+    "ok": true,
+    "wall_s": 3.52,
+    "tokens": 53,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 4.35,
+    "tokens": 71,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": true,
+    "wall_s": 10.67,
+    "tokens": 193,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 22.95,
+    "tokens": 354,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": true,
+    "wall_s": 3.5,
+    "tokens": 50,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": true,
+    "wall_s": 3.45,
+    "tokens": 33,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 2.78,
+    "tokens": 38,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 0.69,
+    "tokens": 7,
+    "timed_out": false
+   }
+  },
+  "score": 13,
+  "exam_wall_s": 105.4,
+  "swap_mb_after": 3616.5
+ },
+ "mistral:7b": {
+  "model": "mistral:7b",
+  "key": "mistral:7b",
+  "started": "2026-10-29 15:39:23",
+  "free_pct_before": 75,
+  "swap_mb_before": 3560.5,
+  "pull_s": 598.1,
+  "size_gb": 4.37,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "llama",
+   "families": [
+    "llama"
+   ],
+   "parameter_size": "7.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 4096,
+   "runner": "ggml"
+  },
+  "load_s": 4.32,
+  "vram_gb": 4.63,
+  "loaded_gb": 5.15,
+  "gpu_share": 0.899,
+  "gen_tps": 12.27,
+  "prompt_tps": 164.4,
+  "speed_runs": [
+   {
+    "gen_tps": 10.940107356641004,
+    "prompt_tps": 164.36297606561996,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 12.27387777442377,
+    "prompt_tps": 54.798095113836524,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 12.718741234129272,
+    "prompt_tps": 238.75574150711716,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 2347,
+  "long_prompt_tps": 98.9,
+  "long_gen_tps": 10.96,
+  "swap_mb_during": 3549.38,
+  "free_pct_during": 12,
+  "exam": {
+   "parse_duration": {
+    "ok": false,
+    "wall_s": 27.51,
+    "tokens": 300,
+    "timed_out": false,
+    "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'tuple'"
+   },
+   "merge_intervals": {
+    "ok": true,
+    "wall_s": 26.53,
+    "tokens": 269,
+    "timed_out": false,
+    "error": ""
+   },
+   "is_valid_ipv4": {
+    "ok": false,
+    "wall_s": 19.41,
+    "tokens": 185,
+    "timed_out": false,
+    "error": "AssertionError"
+   },
+   "roman_to_int": {
+    "ok": true,
+    "wall_s": 29.06,
+    "tokens": 310,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 19.72,
+    "tokens": 180,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": false,
+    "wall_s": 21.82,
+    "tokens": 224,
+    "timed_out": false,
+    "error": "You can only execute one statement at a time."
+   },
+   "sql_busiest_month": {
+    "ok": false,
+    "wall_s": 40.21,
+    "tokens": 364,
+    "timed_out": false,
+    "error": "near \"FROM\": syntax error"
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 14.83,
+    "tokens": 133,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": false,
+    "wall_s": 1.94,
+    "tokens": 10,
+    "timed_out": false
+   },
+   "train": {
+    "ok": false,
+    "wall_s": 4.41,
+    "tokens": 37,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": false,
+    "wall_s": 10.88,
+    "tokens": 108,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": true,
+    "wall_s": 3.23,
+    "tokens": 25,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 3.99,
+    "tokens": 32,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 1.22,
+    "tokens": 7,
+    "timed_out": false
+   }
+  },
+  "score": 7,
+  "exam_wall_s": 224.8,
+  "swap_mb_after": 4103.25
+ },
+ "qwen3:8b": {
+  "model": "qwen3:8b",
+  "key": "qwen3:8b",
+  "started": "2026-10-29 15:56:02",
+  "free_pct_before": 75,
+  "swap_mb_before": 2598.06,
+  "pull_s": 604.8,
+  "size_gb": 5.23,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "8.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 40960,
+   "embedding_length": 4096,
+   "runner": "ggml"
+  },
+  "load_s": 8.24,
+  "vram_gb": 4.59,
+  "loaded_gb": 6.04,
+  "gpu_share": 0.759,
+  "gen_tps": 6.41,
+  "prompt_tps": 63.4,
+  "speed_runs": [
+   {
+    "gen_tps": 5.244952281485608,
+    "prompt_tps": 63.35648582691947,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 6.407936229019641,
+    "prompt_tps": 63.02535720204763,
+    "eval_count": 256
+   },
+   {
+    "gen_tps": 8.026527422301726,
+    "prompt_tps": 83.66489421038932,
+    "eval_count": 256
+   }
+  ],
+  "long_prompt_tokens": 1936,
+  "long_prompt_tps": 52.3,
+  "long_gen_tps": 7.37,
+  "swap_mb_during": 4028.62,
+  "free_pct_during": 10,
+  "exam": {
+   "parse_duration": {
+    "ok": true,
+    "wall_s": 264.54,
+    "tokens": 1541,
+    "timed_out": false,
+    "error": ""
+   },
+   "merge_intervals": {
+    "ok": false,
+    "wall_s": 300.04,
+    "tokens": null,
+    "timed_out": true,
+    "error": "timed out"
+   },
+   "is_valid_ipv4": {
+    "ok": false,
+    "wall_s": 300.14,
+    "tokens": null,
+    "timed_out": true,
+    "error": "timed out"
+   },
+   "roman_to_int": {
+    "ok": false,
+    "wall_s": 300.13,
+    "tokens": null,
+    "timed_out": true,
+    "error": "timed out"
+   },
+   "sql_region_totals": {
+    "ok": true,
+    "wall_s": 102.57,
+    "tokens": 593,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_top2": {
+    "ok": true,
+    "wall_s": 115.2,
+    "tokens": 790,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_busiest_month": {
+    "ok": true,
+    "wall_s": 106.54,
+    "tokens": 712,
+    "timed_out": false,
+    "error": ""
+   },
+   "sql_avg_frequent": {
+    "ok": true,
+    "wall_s": 164.54,
+    "tokens": 1129,
+    "timed_out": false,
+    "error": ""
+   },
+   "multiply": {
+    "ok": true,
+    "wall_s": 190.34,
+    "tokens": 1179,
+    "timed_out": false
+   },
+   "train": {
+    "ok": true,
+    "wall_s": 103.82,
+    "tokens": 589,
+    "timed_out": false
+   },
+   "sisters": {
+    "ok": true,
+    "wall_s": 141.95,
+    "tokens": 969,
+    "timed_out": false
+   },
+   "strawberry": {
+    "ok": true,
+    "wall_s": 103.87,
+    "tokens": 542,
+    "timed_out": false
+   },
+   "json": {
+    "ok": true,
+    "wall_s": 35.83,
+    "tokens": 240,
+    "timed_out": false
+   },
+   "three_words": {
+    "ok": true,
+    "wall_s": 125.71,
+    "tokens": 782,
+    "timed_out": false
+   }
+  },
+  "score": 11,
+  "exam_wall_s": 2355.2,
+  "swap_mb_after": 6685.06
+ },
+ "deepseek-r1:8b": {
+  "model": "deepseek-r1:8b",
+  "error": "CalledProcessError(1, ['ollama', 'pull', 'deepseek-r1:8b'])",
+  "started": "2026-10-29 17:10:49"
+ },
+ "gemma3:12b": {
+  "model": "gemma3:12b",
+  "error": "CalledProcessError(1, ['ollama', 'pull', 'gemma3:12b'])",
+  "started": "2026-10-29 17:13:27"
+ },
+ "qwen3:14b": {
+  "model": "qwen3:14b",
+  "error": "CalledProcessError(1, ['ollama', 'pull', 'qwen3:14b'])",
+  "started": "2026-10-29 17:14:37"
+ }
+}

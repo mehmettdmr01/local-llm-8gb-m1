@@ -1,0 +1,114 @@
+{
+ "parse_duration": {
+  "answer": "```python\nimport re\n\ndef parse_duration(s):\n    durations = {'h': 3600, 'm': 60, 's': 1}\n    matches = re.findall(r'(\\d+)s?|(\\d+)h?|(\\d+)m?|(\\d+)s?', s)\n    total_seconds = 0\n    for unit, value in matches:\n        if unit in durations:\n            total_seconds += int(value) * durations[unit]\n        else:\n            total_seconds += int(value)\n    return total_seconds\n```",
+  "thinking": "",
+  "wall_s": 2.63,
+  "timed_out": false,
+  "eval_count": 114,
+  "eval_s": 2.525982
+ },
+ "merge_intervals": {
+  "answer": "```python\ndef merge_intervals(intervals):\n    if not intervals:\n        return []\n\n    intervals.sort(key=lambda x: x[0])\n\n    merged = [intervals[0]]\n\n    for current in intervals[1:]:\n        last = merged[-1]\n\n        if current[0] <= last[1]:\n            merged[-1] = (last[0], max(last[1], current[1]))\n        else:\n            merged.append(current)\n\n    return merged\n```",
+  "thinking": "",
+  "wall_s": 2.27,
+  "timed_out": false,
+  "eval_count": 97,
+  "eval_s": 2.173288
+ },
+ "is_valid_ipv4": {
+  "answer": "```python\ndef is_valid_ipv4(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit() or not 0 <= int(part) <= 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True\n```",
+  "thinking": "",
+  "wall_s": 2.29,
+  "timed_out": false,
+  "eval_count": 84,
+  "eval_s": 2.192612
+ },
+ "roman_to_int": {
+  "answer": "```python\ndef roman_to_int(s):\n    roman_numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i > 0 and roman_numerals[s[i]] > roman_numerals[s[i - 1]]:\n            total += roman_numerals[s[i]] - 2 * roman_numerals[s[i - 1]]\n        else:\n            total += roman_numerals[s[i]]\n    return total\n```",
+  "thinking": "",
+  "wall_s": 3.2,
+  "timed_out": false,
+  "eval_count": 134,
+  "eval_s": 3.13748
+ },
+ "sql_region_totals": {
+  "answer": "```sql\nSELECT \n    region, \n    SUM(amount) AS total\nFROM \n    orders\nGROUP BY \n    region\nORDER BY \n    total DESC;\n```",
+  "thinking": "",
+  "wall_s": 0.94,
+  "timed_out": false,
+  "eval_count": 36,
+  "eval_s": 0.815214
+ },
+ "sql_top2": {
+  "answer": "```sql\nSELECT T1.name, T2.name\nFROM customers AS T1\nJOIN orders AS T2 ON T1.id = T2.customer_id\nWHERE T2.amount = (SELECT MAX(amount) FROM orders);\n```",
+  "thinking": "",
+  "wall_s": 1.23,
+  "timed_out": false,
+  "eval_count": 48,
+  "eval_s": 1.142546
+ },
+ "sql_busiest_month": {
+  "answer": "```sql\nSELECT T1.region, COUNT(T1.id) AS order_count\nFROM customers T1\nINNER JOIN orders T2 ON T1.id = T2.customer_id\nGROUP BY T1.region\nORDER BY COUNT(T1.id) DESC\nLIMIT 1;\n```",
+  "thinking": "",
+  "wall_s": 1.42,
+  "timed_out": false,
+  "eval_count": 58,
+  "eval_s": 1.323376
+ },
+ "sql_avg_frequent": {
+  "answer": "```sql\nSELECT \n    c.name,\n    ROUND(AVG(o.amount), 2) AS avg_order_amount\nFROM \n    customers c\nJOIN \n    orders o ON c.id = o.customer_id\nGROUP BY \n    c.name\nHAVING \n    COUNT(o.id) > 2;\n```",
+  "thinking": "",
+  "wall_s": 1.49,
+  "timed_out": false,
+  "eval_count": 64,
+  "eval_s": 1.407308
+ },
+ "multiply": {
+  "answer": "To find the product of 487 and 36, I will multiply the numbers.\n\n487 * 30 = 14,770\n487 * 6 = 2,322\nAdding these two results together gives me:\n\n14,770 + 2,322 = 17,092\n\nSo, the product of 487 and 36 is 17,092.",
+  "thinking": "",
+  "wall_s": 1.76,
+  "timed_out": false,
+  "eval_count": 76,
+  "eval_s": 1.66987
+ },
+ "train": {
+  "answer": "To find the duration of the trip, we need to calculate the difference in hours and minutes.\n\nThe train leaves at 14:35 and arrives at 18:10. To find the difference, we first need to find the difference in hours and minutes.\n\nFrom 14:35 to 18:10, there are 3 hours and 35 minutes.\n\n3 hours and 35 minutes can be converted to just minutes by multiplying 3 hours by 60 (since there are 60 minutes in an hour) and then adding 35 minutes:\n\n3 hours * 60 = 180 minutes\n180 + 35 = 215 minutes\n\nSo, the difference in minutes is 215 minutes.\n\nThe trip is 215 minutes long.",
+  "thinking": "",
+  "wall_s": 3.46,
+  "timed_out": false,
+  "eval_count": 150,
+  "eval_s": 3.373996
+ },
+ "sisters": {
+  "answer": "Let's break this down step by step.\n\nSally has 3 brothers. Since each of her brothers has 2 sisters, we need to count how many sisters each brother has.\n\nEach brother has 2 sisters, so each brother has 3 sisters (including Sally). Since there are 3 brothers, the total number of sisters Sally's brothers have is 3 x 3 = 9.\n\nNow, we need to count how many sisters Sally has. We know that her brothers have 9 sisters in total. This means that Sally herself is not one of the sisters, but she is one of the sisters' sisters. Therefore, Sally has 9 sisters.",
+  "thinking": "",
+  "wall_s": 3.11,
+  "timed_out": false,
+  "eval_count": 136,
+  "eval_s": 3.025367
+ },
+ "strawberry": {
+  "answer": "Let's count the letter r's. The word strawberry has the letters s, t, r, r, y, a, and y. The letter r appears twice. \n\nAnswer: 2",
+  "thinking": "",
+  "wall_s": 0.98,
+  "timed_out": false,
+  "eval_count": 41,
+  "eval_s": 0.888822
+ },
+ "json": {
+  "answer": "Here's a JSON object with the specified keys:\n\n```json\n{\n    \"name\": \"Ada\",\n    \"age\": 36,\n    \"languages\": [\"Python\", \"C\"]\n}\n```",
+  "thinking": "",
+  "wall_s": 0.98,
+  "timed_out": false,
+  "eval_count": 41,
+  "eval_s": 0.892785
+ },
+ "three_words": {
+  "answer": "okay",
+  "thinking": "",
+  "wall_s": 0.08,
+  "timed_out": false,
+  "eval_count": 2,
+  "eval_s": 0.023069
+ }
+}

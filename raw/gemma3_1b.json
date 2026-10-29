@@ -1,0 +1,114 @@
+{
+ "parse_duration": {
+  "answer": "```python\nimport re\n\ndef parse_duration(s):\n  \"\"\"\n  Converts strings like '1h30m', '45s', '2h5s' or '3m' into a total number of seconds (int).\n  Returns only the code in one ```python block.\n  \"\"\"\n  match = re.match(r'(\\d+)h(\\d+)m', s)\n  if match:\n    return int(match.group(1)) + int(match.group(2))\n  else:\n    return 0\n```",
+  "thinking": "",
+  "wall_s": 2.42,
+  "timed_out": false,
+  "eval_count": 127,
+  "eval_s": 2.310819
+ },
+ "merge_intervals": {
+  "answer": "```python\ndef merge_intervals(intervals):\n    \"\"\"\n    Merges overlapping intervals in a list of [start, end] pairs.\n\n    Args:\n        intervals: A list of [start, end] pairs.\n\n    Returns:\n        A sorted list of merged intervals.\n    \"\"\"\n    if not intervals:\n        return []\n\n    # Sort the intervals by start time\n    intervals.sort(key=lambda x: x[0])\n\n    merged = []\n    current_interval = intervals[0]\n\n    for i in range(1, len(intervals)):\n        next_interval = intervals[i]\n\n        if next_interval[0] <= current_interval[1]:\n            # Overlapping intervals, merge them\n            current_interval = [current_interval[0], max(current_interval[1], next_interval[1])]\n        else:\n            # Non-overlapping intervals, add current_interval to merged and update current_interval\n            merged.append(current_interval)\n            current_interval = next_interval\n\n    # Add the last interval to merged\n    merged.append(current_interval)\n\n    return sorted(merged)\n```",
+  "thinking": "",
+  "wall_s": 4.86,
+  "timed_out": false,
+  "eval_count": 259,
+  "eval_s": 4.746647
+ },
+ "is_valid_ipv4": {
+  "answer": "```python\ndef is_valid_ipv4(s):\n  \"\"\"\n  Checks if a string is a valid dotted IPv4 address.\n\n  Args:\n    s: The string to check.\n\n  Returns:\n    True if the string is a valid IPv4 address, False otherwise.\n  \"\"\"\n  parts = s.split(\".\")\n  if len(parts) != 4:\n    return False\n\n  for part in parts:\n    if not part.isdigit():\n      return False\n    if len(part) > 1 and part[0] == '0':\n      return False\n    if len(part) > 3:\n      return False\n  return True\n```",
+  "thinking": "",
+  "wall_s": 2.89,
+  "timed_out": false,
+  "eval_count": 153,
+  "eval_s": 2.789418
+ },
+ "roman_to_int": {
+  "answer": "```python\ndef roman_to_int(s):\n    roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    result = 0\n    prev_value = 0\n\n    for i in range(len(s) - 1, -1, -1):\n        curr_value = roman_map[s[i]]\n        if curr_value < prev_value:\n            result -= curr_value\n        else:\n            result += curr_value\n        prev_value = curr_value\n\n    return result\n```",
+  "thinking": "",
+  "wall_s": 3.09,
+  "timed_out": false,
+  "eval_count": 163,
+  "eval_s": 2.976875
+ },
+ "sql_region_totals": {
+  "answer": "```sql\nSELECT\n    \"region\",\n    SUM(\"amount\") AS \"total\"\nFROM\n    orders\nGROUP BY\n    \"region\"\nORDER BY\n    \"total\" DESC;\n```",
+  "thinking": "",
+  "wall_s": 0.95,
+  "timed_out": false,
+  "eval_count": 45,
+  "eval_s": 0.809097
+ },
+ "sql_top2": {
+  "answer": "```sql\nSELECT c1.name\nFROM customers c1\nJOIN orders o1 ON c1.id = o1.customer_id\nWHERE o1.amount = (SELECT MAX(amount) FROM orders);\n```",
+  "thinking": "",
+  "wall_s": 1.02,
+  "timed_out": false,
+  "eval_count": 49,
+  "eval_s": 0.881711
+ },
+ "sql_busiest_month": {
+  "answer": "```sql\nSELECT\n  strftime('%Y-%m', \"order_date\") AS month,\n  COUNT(*) AS order_count\nFROM orders\nGROUP BY\n  month\nORDER BY\n  order_count DESC\nLIMIT 1;\n```",
+  "thinking": "",
+  "wall_s": 1.11,
+  "timed_out": false,
+  "eval_count": 54,
+  "eval_s": 0.974441
+ },
+ "sql_avg_frequent": {
+  "answer": "```sql\nSELECT\n  c.name,\n  ROUND(c.amount / 2, 2) AS average_order_amount\nFROM customers AS c\nJOIN orders AS o\n  ON c.id = o.customer_id\nGROUP BY\n  c.name\nHAVING\n  COUNT(*) > 2;\n```",
+  "thinking": "",
+  "wall_s": 1.48,
+  "timed_out": false,
+  "eval_count": 74,
+  "eval_s": 1.341737
+ },
+ "multiply": {
+  "answer": "487 multiplied by 36 is 17972.\n\nAnswer: 17972",
+  "thinking": "",
+  "wall_s": 0.56,
+  "timed_out": false,
+  "eval_count": 26,
+  "eval_s": 0.459876
+ },
+ "train": {
+  "answer": "Let the departure time be 14:35 and the arrival time be 18:10.\nWe need to find the duration of the trip in minutes.\nFirst, we find the time difference in hours and minutes.\nThe time difference is $18:10 - 14:35 = 3$ hours and $35$ minutes.\nSince there are 60 minutes in an hour, we can convert the time difference to minutes:\n$3 \\text{ hours} = 3 \\times 60 = 180 \\text{ minutes}$\n$35 \\text{ minutes} = 35 \\text{ minutes}$\nSo the time difference is $180 + 35 = 215$ minutes.\nThe train leaves at 14:35 and arrives at 18:10.\nThe travel time is 215 minutes.\nFinal Answer: 215",
+  "thinking": "",
+  "wall_s": 3.89,
+  "timed_out": false,
+  "eval_count": 207,
+  "eval_s": 3.786833
+ },
+ "sisters": {
+  "answer": "Here’s how to solve this:\n\nSince Sally is one of her brothers’ sisters, and each brother has two sisters, there is only one other sister. \n\nAnswer: 1",
+  "thinking": "",
+  "wall_s": 0.82,
+  "timed_out": false,
+  "eval_count": 40,
+  "eval_s": 0.716633
+ },
+ "strawberry": {
+  "answer": "Let's count the occurrences of the letter “r” in the word “strawberry”:\n\n1. s - 1\n2. t - 1\n3. r - 2\n4. a - 1\n5. y - 1\n6. b - 1\n7. e - 1\n\nTotal: 2 + 1 + 2 + 1 + 1 + 1 + 1 = 9\n\nAnswer: 9",
+  "thinking": "",
+  "wall_s": 1.9,
+  "timed_out": false,
+  "eval_count": 99,
+  "eval_s": 1.799379
+ },
+ "json": {
+  "answer": "```json\n{\n  \"name\": \"Ada\",\n  \"age\": 36,\n  \"languages\": [\n    \"Python\",\n    \"C\"\n  ]\n}\n```\n",
+  "thinking": "",
+  "wall_s": 0.93,
+  "timed_out": false,
+  "eval_count": 46,
+  "eval_s": 0.827543
+ },
+ "three_words": {
+  "answer": "hello, please, back.",
+  "thinking": "",
+  "wall_s": 0.18,
+  "timed_out": false,
+  "eval_count": 7,
+  "eval_s": 0.111633
+ }
+}

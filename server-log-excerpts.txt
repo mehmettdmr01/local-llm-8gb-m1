@@ -1,0 +1,42 @@
+time=2026-10-29T14:11:45.797+03:00 level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=Metal compute=0.0 name=MTL0 description="Apple M1" libdirs=ollama driver=0.0 pci_id="" type=iGPU total="5.3 GiB" available="5.3 GiB"
+time=2026-10-29T14:11:45.797+03:00 level=INFO source=routes.go:2566 msg="vram-based default context" total_vram="5.3 GiB" default_num_ctx=4096
+time=2026-10-29T14:16:40.930+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-2f8c3d137f24…
+time=2026-10-29T14:16:40.932+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 27/27 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T14:21:13.884+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-74701a8c35f6…
+time=2026-10-29T14:21:13.886+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 17/17 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T14:23:07.002+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-3d0b790534fe…
+time=2026-10-29T14:23:07.003+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T14:37:21.057+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-dde5aa3fc5ff…
+time=2026-10-29T14:37:21.058+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 29/29 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T14:51:24.497+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-3e4cb1417446…
+time=2026-10-29T14:51:24.498+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T15:35:30.124+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-7a50f9607a47…
+time=2026-10-29T15:35:30.129+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 34/35 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T15:49:21.732+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-f5074b1221da…
+time=2026-10-29T15:49:21.735+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 31/33 layers to GPU
+llama_context: n_ctx                 = 4096
+time=2026-10-29T16:06:07.142+03:00 level=INFO source=llama_server.go:457 msg="starting llama-server" model sha256-a3de86cd1c13…
+time=2026-10-29T16:06:07.145+03:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=Metal available="4.8 GiB" free="5.3 GiB" minimum="512.0 MiB" overhead="0 B"
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 4096

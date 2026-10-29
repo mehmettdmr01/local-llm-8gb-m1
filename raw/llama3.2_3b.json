@@ -1,0 +1,114 @@
+{
+ "parse_duration": {
+  "answer": "```python\ndef parse_duration(s):\n    import re\n    h_m_s = re.findall(r'(\\d+)(h|m|s)?', s)\n    total_seconds = 0\n    for h, m, s in h_m_s:\n        if h:\n            total_seconds += int(h) * 3600\n        if m:\n            total_seconds += int(m) * 60\n        if s:\n            total_seconds += int(s)\n    return total_seconds\n```",
+  "thinking": "",
+  "wall_s": 3.92,
+  "timed_out": false,
+  "eval_count": 101,
+  "eval_s": 3.598735
+ },
+ "merge_intervals": {
+  "answer": "```python\ndef merge_intervals(intervals):\n    # Sort intervals by start time\n    intervals.sort(key=lambda x: x[0])\n\n    merged = []\n    for interval in intervals:\n        # If merged list is empty or if the current interval does not overlap with the previous, append it\n        if not merged or merged[-1][1] < interval[0]:\n            merged.append(interval)\n        else:\n            # Otherwise, there is overlap, so we merge the current and previous intervals\n            merged[-1][1] = max(merged[-1][1], interval[1])\n\n    return merged\n```",
+  "thinking": "",
+  "wall_s": 4.81,
+  "timed_out": false,
+  "eval_count": 127,
+  "eval_s": 4.542853
+ },
+ "is_valid_ipv4": {
+  "answer": "```python\ndef is_valid_ipv4(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit() or not 0 <= int(part) <= 255 or (len(part) > 1 and part[0] == '0'):\n            return False\n    return True\n```",
+  "thinking": "",
+  "wall_s": 3.05,
+  "timed_out": false,
+  "eval_count": 79,
+  "eval_s": 2.791856
+ },
+ "roman_to_int": {
+  "answer": "```python\ndef roman_to_int(s):\n    roman_numerals = {\n        'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000\n    }\n    result = 0\n    for i in range(len(s)):\n        if i > 0 and roman_numerals[s[i]] > roman_numerals[s[i - 1]]:\n            result += roman_numerals[s[i]] - 2 * roman_numerals[s[i - 1]]\n        else:\n            result += roman_numerals[s[i]]\n    return result\n```",
+  "thinking": "",
+  "wall_s": 5.08,
+  "timed_out": false,
+  "eval_count": 138,
+  "eval_s": 4.937851
+ },
+ "sql_region_totals": {
+  "answer": "```sql\nSELECT \n    c.region, \n    SUM(o.amount) AS total\nFROM \n    customers c\nJOIN \n    orders o ON c.id = o.customer_id\nGROUP BY \n    c.region\nORDER BY \n    total DESC;\n```",
+  "thinking": "",
+  "wall_s": 2.27,
+  "timed_out": false,
+  "eval_count": 53,
+  "eval_s": 1.902505
+ },
+ "sql_top2": {
+  "answer": "```sql\nSELECT name\nFROM customers\nWHERE id IN (\n  SELECT customer_id\n  FROM orders\n  GROUP BY customer_id\n  ORDER BY SUM(amount) DESC\n  LIMIT 2\n);\n```",
+  "thinking": "",
+  "wall_s": 1.82,
+  "timed_out": false,
+  "eval_count": 44,
+  "eval_s": 1.568846
+ },
+ "sql_busiest_month": {
+  "answer": "```sql\nSELECT \n    TO_CHAR(o.order_date, 'YYYY-MM') AS month,\n    COUNT(o.id) AS num_orders\nFROM \n    orders o\nGROUP BY \n    TO_CHAR(o.order_date, 'YYYY-MM')\nORDER BY \n    num_orders DESC\nLIMIT 1;\n```",
+  "thinking": "",
+  "wall_s": 2.48,
+  "timed_out": false,
+  "eval_count": 62,
+  "eval_s": 2.214365
+ },
+ "sql_avg_frequent": {
+  "answer": "```sql\nSELECT \n    c.name, \n    ROUND(AVG(o.amount), 2) AS average_amount\nFROM \n    orders o\nJOIN \n    customers c ON o.customer_id = c.id\nGROUP BY \n    c.name\nHAVING \n    COUNT(o.id) > 2\nORDER BY \n    c.name;\n```",
+  "thinking": "",
+  "wall_s": 2.81,
+  "timed_out": false,
+  "eval_count": 71,
+  "eval_s": 2.553035
+ },
+ "multiply": {
+  "answer": "To calculate 487 multiplied by 36, I'll start by multiplying the numbers.\n\n487 × 30 = 14,610\n487 × 6 = 5,922\n\nNow, I'll add the results together:\n\n14,610 + 5,922 = 20,532\n\nAnswer: 20,532",
+  "thinking": "",
+  "wall_s": 2.65,
+  "timed_out": false,
+  "eval_count": 67,
+  "eval_s": 2.388835
+ },
+ "train": {
+  "answer": "To find the duration of the trip, we need to calculate the difference in minutes between the departure and arrival times. \n\nFirst, let's convert the times to a 24-hour format for easier calculation. \n\nDeparture time: 14:35 = 14 + (35/60) hours = 14.583 hours\nArrival time: 18:10 = 18 + (10/60) hours = 18.167 hours\n\nNow, let's calculate the difference in hours:\n18.167 - 14.583 = 3.584 hours\n\nTo convert hours to minutes, we multiply by 60:\n3.584 * 60 = 215.04 minutes\n\nSo, the trip duration is approximately 215 minutes.\n\nAnswer: 215",
+  "thinking": "",
+  "wall_s": 5.94,
+  "timed_out": false,
+  "eval_count": 158,
+  "eval_s": 5.679247
+ },
+ "sisters": {
+  "answer": "Let's break it down step by step. Sally has 3 brothers, and each of her brothers has 2 sisters. This means each brother has 2 sisters, but those sisters are Sally's sisters. Since there are 3 brothers, and each brother has 2 sisters, it implies that Sally has 2 sisters.\n\nAnswer: 2",
+  "thinking": "",
+  "wall_s": 2.89,
+  "timed_out": false,
+  "eval_count": 71,
+  "eval_s": 2.622779
+ },
+ "strawberry": {
+  "answer": "Let's break down the word \"strawberry\" to count the occurrence of the letter \"r\". \n\n1. S - T - R - A - W - B - E - R - R - Y\n\nThe letter \"r\" appears twice in the word \"strawberry\".\n\nAnswer: 2",
+  "thinking": "",
+  "wall_s": 2.58,
+  "timed_out": false,
+  "eval_count": 64,
+  "eval_s": 2.311405
+ },
+ "json": {
+  "answer": "{\"name\": \"Ada\", \"age\": 36, \"languages\": [\"Python\", \"C\"]}",
+  "thinking": "",
+  "wall_s": 1.04,
+  "timed_out": false,
+  "eval_count": 22,
+  "eval_s": 0.771913
+ },
+ "three_words": {
+  "answer": "i'm ready to help",
+  "thinking": "",
+  "wall_s": 0.35,
+  "timed_out": false,
+  "eval_count": 6,
+  "eval_s": 0.184248
+ }
+}
